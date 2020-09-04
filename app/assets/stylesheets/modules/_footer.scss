@@ -1,0 +1,21 @@
+footer {
+  background-color: #34495e;
+  width: 100%;
+  height: 100px;
+  padding-top: 20px;
+  text-align: center;
+  .contents {
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+    li a {
+      color: white;
+    }
+  }
+
+  .copyright p {
+    color: white;
+    margin: 0;
+  }
+}
