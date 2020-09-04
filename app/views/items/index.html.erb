@@ -1,0 +1,58 @@
+<header>
+  <%# <div class="container"> %>
+    <%= render partial: "header-nav" %>
+  <%# </div> %>
+</header>
+
+<div class="about">
+  <h1 class="about-top">サラダチキンに飽きてしまった方へ</h1>
+  <a href="#">My Salad Chikenを利用する</a>
+</div>
+
+<div class="introduce">
+  <div class="container">
+    <div class="introduction">
+      <h2 class="introduction-title">My Salad Chickenとは</h2>
+    </div>
+    <p>手軽に高タンパク質なものを摂取したい時に食べるサラダチキン<br>
+      しかし、同じ様な味では飽きてしまう...という方に向けた、<br>
+      サラダチキンに特化した口コミサイトです。</p>
+    <div class="introduction-contents uk-child-width-expand@s uk-text-center uk-grid">
+      <div class="introduction-box uk-card uk-card-default uk-card-body">
+        <span class="fas fa-check-square"></span>
+        <h3 class="introduction-title">リアルな口コミ</h3>
+        <p class="introduction-text">購入者によるリアルな<br>口コミで失敗しない</p>
+      </div>
+      <div class="introduction-box uk-card uk-card-default uk-card-body">
+        <span class="fas fa-search"></span>
+        <h3 class="introduction-title">検索性</h3>
+        <p class="introduction-text">お気に入りやランキング、<br>最新の口コミから検索可能</p>
+      </div>
+      <div class="introduction-box uk-card uk-card-default uk-card-body">
+        <span class="fas fa-reply"></span>
+        <h3 class="introduction-title">レスポンシブ</h3>
+        <p class="introduction-text">PCやスマートフォン<br>どちらからでも見やすい設計</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="item-list">
+  <div class="container">
+    <h2>お気に入りランキング</h2>
+  <%# <%= render partial: 'item' %> %>
+  </div>
+  <div class="container">
+    <h2>新着サラダチキン</h2>
+  </div>
+  <%# <%= render partial: 'item' %> %>
+</div>
+
+
+
+
+<footer>
+  <%# <div class="container"> %>
+    <%= render partial: "footer" %>
+  <%# </div> %>
+</footer>
