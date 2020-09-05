@@ -7,10 +7,11 @@ footer {
   .contents {
     ul {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
     }
     li a {
       color: white;
+      margin-left: 30px;
     }
   }
 
