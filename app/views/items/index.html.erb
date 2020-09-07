@@ -1,7 +1,5 @@
 <header>
-  <%# <div class="container"> %>
     <%= render partial: "header-nav" %>
-  <%# </div> %>
 </header>
 
 <div class="about">
@@ -38,21 +36,25 @@
 </div>
 
 <div class="item-list">
-  <div class="container">
-    <h2>お気に入りランキング</h2>
-  <%# <%= render partial: 'item' %> %>
+    <div class="container">
+      <h2 class="item-list__title">お気に入りランキング</h2>
+      <div class="item-list__index">
+        <div class="item-box">
+
+
+        </div>
+    </div>
+
+    <div class="item-index">
+      <h2 class="item-index__title">新着サラダチキン</h2>
+
+    </div>
   </div>
-  <div class="container">
-    <h2>新着サラダチキン</h2>
-  </div>
-  <%# <%= render partial: 'item' %> %>
 </div>
 
 
 
 
 <footer>
-  <%# <div class="container"> %>
     <%= render partial: "footer" %>
-  <%# </div> %>
 </footer>
