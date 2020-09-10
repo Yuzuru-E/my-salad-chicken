@@ -1,13 +1,11 @@
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
 
 .container {
-  width: 80vw;
+  width: 75vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -16,7 +14,7 @@ a {
 .about {
   padding-top: 100px;
   text-align: center;
-  background-image: url('https://images.unsplash.com/photo-1553531009-c4605f302b47?ixlib=rb-1.2.1&auto=format&fit=crop&w=2467&q=80');
+  background-image: image-url('top.jpeg');
   background-size: cover;
   width: 100%;
   height: 500px;
@@ -34,9 +32,98 @@ a {
 }
 
 .introduce {
-  margin: 20px;
+  margin: 20px 0;
+  .introduction__contents {
+    margin: 0 auto;
+  }
   span {
     font-size: 40px;
+  }
+  .introduction-box {
+    margin: 10px;
+  }
+}
+
+.item-list {
+  padding: 100px 0 ;
+  &__index {
+    justify-content: center;
+    a {
+      text-decoration: none;
+      padding-left: 0;
+      margin-left: 20px;
+    }
+  }
+  .item-box {
+    padding: 10px;
+    margin: 15px 0;
+    img {
+      height: 150px;
+      width: 150px;
+    }
+    p {
+      margin: 2px 0;
+    }
+    hr {
+      margin: 2px;
+    }
+    .reviews {
+      font-size: 14px;
+      margin: 1px 0;
+    }
+  }
+  .item-index {
+    display: inline-block;
+    text-align: center;
+    padding:10px 15px;
+    background-color: lightblue;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 60%;
+    margin-top: 10px;
+    a {
+    }
+  }
+  .review {
+    margin-bottom: 15px;
+    &__index {
+      margin: 10px 0;
+    }
+    &__box {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    &__left {
+      a {
+        text-decoration: none;
+      }
+      img {
+        height: 100px;
+        width: 100px;
+      }
+      p {
+        margin: 3px;
+      }
+    }
+    &__center {
+      // margin: 0 25px;
+    }
+    &__contents {
+      text-align-last: left;
+    }
+    &__right {
+      a {
+        text-decoration: none;
+      }
+      img {
+        height: 80px;
+        width: 80px;
+      }
+      p {
+        margin: 3px;
+      }
+    }
   }
 }
 
