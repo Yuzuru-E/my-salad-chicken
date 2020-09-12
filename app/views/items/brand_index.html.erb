@@ -1,0 +1,43 @@
+<header>
+    <%= render partial: "header" %>
+</header>
+
+<div class="item-list">
+  <div class="container">
+    <h2 class="item-list__title">ブランド一覧</h2>
+      <div class="item-list__index uk-child-width-expand@s uk-text-center uk-grid">
+        <%= link_to "#" do%>
+          <div class="item-box uk-card uk-card-default uk-card-body uk-width-auto@m">
+            <%= image_tag("ピザ.jpg") %>
+            <%# <img src="ピザ.jpg" alt=""> %>
+            <p class="maker">アマタケ</p>
+          </div>
+        <% end %>
+        <%= link_to "#" do%>
+          <div class="item-box uk-card uk-card-default uk-card-body uk-width-auto@m">
+            <%= image_tag("ピザ.jpg") %>
+            <%# <img src="ピザ.jpg" alt=""> %>
+            <p class="maker">セブンイレブン</p>
+          </div>
+        <% end %>
+        <%= link_to "#" do%>
+          <div class="item-box uk-card uk-card-default uk-card-body uk-width-auto@m">
+            <%= image_tag("ピザ.jpg") %>
+            <%# <img src="ピザ.jpg" alt=""> %>
+            <p class="maker">ファミリーマート</p>
+          </div>
+        <% end %>
+        <%= link_to "#" do%>
+        <div class="item-box uk-card uk-card-default uk-card-body uk-width-auto@m">
+            <%= image_tag("ピザ.jpg") %>
+            <%# <img src="ピザ.jpg" alt=""> %>
+            <p class="maker">ローソン</p>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+<footer>
+    <%= render partial: "footer" %>
+</footer>

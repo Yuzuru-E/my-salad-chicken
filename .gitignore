@@ -30,8 +30,13 @@
 
 /public/packs
 /public/packs-test
+/public/uploads/
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-public/uploads/
+/db/schema.rb
+.DS_Store
+/app/assets/.DS_Store
+/app/assets/images/.DS_Store
+/app/assets/stylesheets/.DS_Store
