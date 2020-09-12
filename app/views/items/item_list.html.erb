@@ -1,10 +1,10 @@
 <header>
-    <%= render "items/header" %>
+    <%= render partial: "header" %>
 </header>
 
 <div class="item-list">
   <div class="container">
-    <h2 class="item-list__title">お気に入りランキング</h2>
+    <h2 class="item-list__title">アイテム一覧</h2>
       <div class="item-list__index uk-child-width-expand@s uk-text-center uk-grid">
         <%= link_to "#" do%>
           <div class="item-box uk-card uk-card-default uk-card-body uk-width-auto@m">
@@ -17,7 +17,7 @@
             <p class="reviews">口コミ評価</p>
             <p class="reviews">★★★★☆</p>
             <hr>
-            <p>ランキング1位</p>
+            <p>お気に入り数</p>
           </div>
         <% end %>
         <%= link_to "#" do%>
@@ -31,7 +31,7 @@
             <p class="reviews">口コミ評価</p>
             <p class="reviews">★★★★☆</p>
             <hr>
-            <p>ランキング1位</p>
+            <p>お気に入り数</p>
           </div>
         <% end %>
         <%= link_to "#" do%>
@@ -45,7 +45,7 @@
             <p class="reviews">口コミ評価</p>
             <p class="reviews">★★★★☆</p>
             <hr>
-            <p>ランキング1位</p>
+            <p>お気に入り数</p>
           </div>
         <% end %>
         <%= link_to "#" do%>
@@ -59,14 +59,13 @@
             <p class="reviews">口コミ評価</p>
             <p class="reviews">★★★★☆</p>
             <hr>
-            <p>ランキング1位</p>
+            <p>お気に入り数</p>
           </div>
         <% end %>
       </div>
   </div>
 </div>
 
-
 <footer>
-    <%= render "items/footer" %>
+    <%= render partial: "footer" %>
 </footer>
