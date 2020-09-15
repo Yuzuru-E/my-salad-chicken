@@ -11,3 +11,16 @@
     text-align: center;
   }
 }
+
+#error_explanation {
+  
+  margin: 5px auto;
+  padding: 5px 0; 
+  background-color: rgb(249, 187, 130);
+  border:1px solid rgb(183, 99, 99);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;;
+  width: 85%;
+  text-align: start;
+
+}
