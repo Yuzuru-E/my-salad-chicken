@@ -1,4 +1,42 @@
+.sessionsMessage {
+  margin-top: 0;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+  }
+}
+
 .signUp {
+  padding: 100px 0;
+  background-color: #f8f8f8;
+  &__title {
+    margin-bottom: 0;
+    padding: 3px auto;
+  }
+  &__contents {
+    margin: 30px auto;
+    width: 50%;
+    border: 1px solid rgba(247, 241, 227, 0.229);
+    border-radius: 5px;
+    label {
+      font-size: 20px;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    input {
+      width: 90%;
+      height: 30px;
+    }
+    .actions {
+      margin-top: 20px;
+      input {
+        // background-color: rgb(255, 177, 66);
+      }
+    }
+  }
+}
+
+.login {
   padding: 100px 0;
   background-color: #f8f8f8;
   &__title {
