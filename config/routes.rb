@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   root 'items#index'
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+  resources :users, only: [:sign, :destroy, :new] do
+    collection do
+      get 'logout'
+    end
+  end
   resources :items do
     collection do
       get 'item_list'
