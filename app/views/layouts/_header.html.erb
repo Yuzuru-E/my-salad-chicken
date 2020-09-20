@@ -1,0 +1,26 @@
+<nav class="uk-navbar-container uk-margin nav-center" uk-navbar>
+  <ul class="header-left uk-navbar-left uk-navbar-nav">
+    <li><%= link_to image_tag("logo/logo.jpg"),"/" %></li>
+    <li><%= link_to favorites_path do %><i class="fa fa-signal"></i>ランキング<% end %></li>
+    <li><%= link_to item_list_items_path do %><i class="fa fa-drumstick-bite"></i>アイテムを探す<% end %></li>
+    <li><%= link_to brand_index_items_path do %><i class="fa fa-industry"></i>ブランドを探す<% end %></li>
+    <li><%= link_to reviews_path do %><i class="fa fa-search"></i>口コミを探す<% end %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "#" do %><i class="fa fa-plus"></i>口コミを投稿する<% end %></li>
+      <li>
+        <%= link_to "マイページ", "#" %>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li><%= link_to "マイページ", "#" %></li>
+            <li><%= link_to destroy_user_session_path do %><i class="fa fa-sign-in-alt"></i>ログアウト<% end %></li>
+          </ul>
+        </div>
+        
+      </li>
+    <% else %>
+      <li><%= link_to new_user_registration_path do %><i class="fa fa-file"></i>新規登録<% end %></li>
+      <li><%= link_to user_session_path do %><i class="fa fa-sign-in-alt"></i>ログイン<% end %></li>
+      <li><%= link_to users_guest_sign_in_path, method: :post do %><i class="fa fa-vial"></i>ゲストログイン<% end %></li>
+    <% end %>
+  </ul>
+</nav>
