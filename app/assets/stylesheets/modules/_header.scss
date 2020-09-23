@@ -9,4 +9,7 @@ nav {
   i {
     padding-right: 5px;
   }
+  .userPage:hover + .uk-navbar-dropdown {
+    display: block;
+  }
 }
