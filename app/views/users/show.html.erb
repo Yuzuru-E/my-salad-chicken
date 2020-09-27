@@ -1,0 +1,53 @@
+<div class="MyPage">
+  <div class="container">
+    <div class="ProfileBox">
+      <%= image_tag 'userIcon.png'%>
+      <h2 class="UserName">テストユーザー</h2>
+      <ul>
+        <li class="age">30代</li><span>|</span>
+        <li class="gender">男性</li>
+      </ul>
+      <div class="introduce">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="item-list">
+  <div class="container">
+    <h2 class="review">新着の口コミ一覧</h2>
+      <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
+        <div class="review__box uk-card uk-card-default uk-card-body">
+          <div class="review__left">
+            <%= link_to "#" do %>
+              <div class="user　uk-card uk-width-auto@m">
+                <p>ユーザー</p>
+                <%= image_tag("ピザ.jpg") %>
+                <p class="user__name">test</p>
+              </div>
+            <% end %>
+          </div>  
+            <div class="review__center user__comment uk-card uk-width-expand@m">
+              <ul class="review__contents arrow_box">
+                <li class="review__timestamp">2020/09/09/10:00</li>
+                <li class="review__evaluation">評価：3<span>｜</span>★★★☆☆</li>
+                <li class="review__title">投稿タイトル</li>
+                <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</li>
+              </ul>
+            </div>
+          <div class="review__right">
+            <%= link_to "#" do%>
+              <div class="review__item">
+                <ul class="review__link">
+                  <li><%= image_tag("ピザ.jpg") %></li>
+                  <li class="item-name">サラダチキンA</li>
+                  <li class="maker">アマタケ</li>
+                </ul>
+              </div>
+          <% end %>
+          </div>  
+        </div>
+      </div>
+  </div>
+</div>
