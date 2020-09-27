@@ -65,3 +65,115 @@
     }
   }
 }
+
+.MyPage {
+  background-color: #f8f8f8;
+}
+
+.MyReviews {
+  .review {
+    margin-bottom: 15px;
+    &__index {
+      margin: 10px 0;
+    }
+    &__box {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    &__left {
+      a {
+        text-decoration: none;
+      }
+      img {
+        height: 100px;
+        width: 100px;
+      }
+      p {
+        margin: 3px;
+      }
+    }
+    &__center {
+      margin: 5px 10px;
+      .arrow_box {
+        position: relative;
+        background: #ffffff;
+        border: 5px solid #e8a54d;
+      }
+      .arrow_box:after, .arrow_box:before {
+        right: 100%;
+        top: 30%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      
+      .arrow_box:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-right-color: #ffffff;
+        border-width: 10px;
+        margin-top: -10px;
+      }
+      .arrow_box:before {
+        border-color: rgba(232, 165, 77, 0);
+        border-right-color: #e8a54d;
+        border-width: 17px;
+        margin-top: -17px;
+      }
+    }
+    &__contents {
+      text-align: left;
+      padding: 5px;
+      margin: 5px 10px;
+    }
+    &__right {
+      a {
+        text-decoration: none;
+      }
+      img {
+        height: 80px;
+        width: 80px;
+      }
+      p {
+        margin: 3px;
+      }
+    }
+  &__link {
+    padding-left: 0;
+  }
+  }
+}
+
+
+.Edit {
+  padding: 100px 0;
+  background-color: #f8f8f8;
+  &__title {
+    margin-bottom: 0;
+    padding: 3px auto;
+  }
+  &__contents {
+    margin: 30px auto;
+    width: 50%;
+    border: 1px solid rgba(247, 241, 227, 0.229);
+    border-radius: 5px;
+    label {
+      font-size: 20px;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    input {
+      width: 85%;
+      height: 30px;
+    }
+    .actions {
+      margin-top: 20px;
+      input {
+        // background-color: rgb(255, 177, 66);
+      }
+    }
+  }
+}
