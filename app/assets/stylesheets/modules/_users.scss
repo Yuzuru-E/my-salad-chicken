@@ -79,10 +79,19 @@
     justify-content: center;
     padding-left: 0;
   }
+  .introduce {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 15px;
+    p {
+      margin-bottom: 0;
+    }
+  }
   .arrowBoxTop {
     position: relative;
     background: #ffffff;
     border: 5px solid #e8a54d;
+    border-radius: 5px;
   }
   .arrowBoxTop:after, .arrowBoxTop:before {
     bottom: 100%;
