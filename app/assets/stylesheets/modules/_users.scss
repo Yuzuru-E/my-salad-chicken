@@ -68,6 +68,45 @@
 
 .MyPage {
   background-color: #f8f8f8;
+  padding-top: 120px;
+  .currentUserIcon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ageOrGender {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .arrowBoxTop {
+    position: relative;
+    background: #ffffff;
+    border: 5px solid #e8a54d;
+  }
+  .arrowBoxTop:after, .arrowBoxTop:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .arrowBoxTop:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  .arrowBoxTop:before {
+    border-color: rgba(232, 165, 77, 0);
+    border-bottom-color: #e8a54d;
+    border-width: 17px;
+    margin-left: -17px;
+  }
 }
 
 .MyReviews {
