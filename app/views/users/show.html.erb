@@ -1,8 +1,9 @@
 <div class="MyPage">
   <div class="container">
     <div class="ProfileBox">
+      <h2><%= current_user.name %>さんのページ</h2>
       <%= image_tag 'userIcon.png', class: "currentUserIcon"%>
-      <h2 class="UserName">テストユーザー</h2>
+      <h2 class="UserName"><%= current_user.nickname %></h2>
       <ul class="ageOrGender">
         <li class="age">30代</li><span>　　|　　</span>
         <li class="gender">男性</li>
