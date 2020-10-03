@@ -5,13 +5,13 @@
       <%= image_tag 'userIcon.png', class: "currentUserIcon"%>
       <h2 class="UserName"><%= current_user.nickname %></h2>
       <ul class="ageOrGender">
-        <li class="age">30代</li><span>　　|　　</span>
-        <li class="gender">男性</li>
+        <li class="age"><%= @user.age.age %></li><span>　|　</span>
+        <li class="gender"><%= @user.gender.gender %></li>
       </ul>
       <div class="introduce arrowBoxTop">
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
       </div>
-      <%= link_to "プロフィールを編集する", edit_user_registration_path(current_user.id), class: "profile_edit " %>
+      <%= link_to " プロフィールを編集する", edit_user_registration_path(current_user.id), class: "profile_edit fa fa-edit" %>
     </div>
   </div>
 </div>
