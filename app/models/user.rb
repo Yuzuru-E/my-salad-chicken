@@ -3,8 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :age
-  belongs_to :gender
+  
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :age
+  belongs_to_active_hash :gender
   has_many :items
 
         
