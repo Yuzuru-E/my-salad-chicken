@@ -3,7 +3,7 @@
     <div class="Edit__contents">
     
       <h2>マイページ <%= resource_name.to_s.humanize %></h2>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= form_with model:@user, local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="field">
           <%= f.label :avaterImg, "ユーザーアイコン", class: "Edit__title" %>
@@ -11,26 +11,26 @@
         </div>
         <div class="field">
           <%= f.label :name, "ユーザー名", class: "Edit__title" %>
-          <%= f.text_field :name, autofocus: true %>
+          <%= f.text_field :name %>
         </div>
         <div class="field">
           <%= f.label :nickname, "ニックネーム", class: "Edit__title" %>
-          <%= f.text_field :nickname, autofocus: true %>
+          <%= f.text_field :nickname %>
         </div>
         <div class="field">
           <%= f.label :age, "年齢層", class: "Edit__title" %>
-          <%= f.collection_select :age_id, Age.all, :id, :age, required: true, class: 'input', autofocus: true, autocomplete: "on" %>
+          <%= f.collection_select :age_id, Age.all, :id, :age, class: 'Edit__selectBox' %>
         </div>
         <div class="field">
           <%= f.label :gender, "性別", class: "Edit__title" %>
-          <%= f.collection_select :gender_id, Gender.all, :id, :gender, required: true, class: 'input', autofocus: true, autocomplete: "on" %>
+          <%= f.collection_select :gender_id, Gender.all, :id, :gender, class: 'Edit__selectBox' %>
         </div>
         
         <div class="actions">
           <%= f.submit "更新する", method: :patch %>
         </div>
       <% end %>
-      <%= link_to "マイページへ戻る", :back %>
+      <%= link_to "マイページへ戻る", :back, class: "back" %>
     </div>
   </div>
 </div>
