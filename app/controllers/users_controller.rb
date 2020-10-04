@@ -6,6 +6,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.avaterImg?
+      @userAvater = @user.avaterImg.to_s
+    else
+      @userAvater = null
+    end
   end
 
   def edit
