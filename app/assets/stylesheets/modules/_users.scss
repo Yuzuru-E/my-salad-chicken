@@ -235,8 +235,11 @@
       margin: 20px;
       input {
         background-color: rgb(255, 177, 66);
+        padding: 10px 20px;
         border: 1px solid #bdc3c7;
         border-radius: 5px;
+        line-height: 10px;
+        cursor: pointer;
       }
     }
   }
@@ -248,5 +251,6 @@
     background-color: #bdc3c7;
     border: 1px solid gray;
     border-radius: 5px;
+    text-decoration: none;
   }
 }
