@@ -2,7 +2,11 @@
   <div class="container">
     <div class="ProfileBox">
       <h2><%= current_user.name %>さんのページ</h2>
+      <% if @userAvater %>
+      <%= image_tag @userAvater, class: "currentUserIcon" %>
+      <% else %>
       <%= image_tag 'userIcon.png', class: "currentUserIcon"%>
+      <% end %>
       <h2 class="UserName"><%= current_user.nickname %></h2>
       <ul class="ageOrGender">
         <li class="age"><%= @user.age.age %></li><span>　|　</span>
