@@ -17,4 +17,6 @@ class User < ApplicationRecord
     end
   end
 
+  mount_uploader :avaterImg, AvaterImgUploader
+
 end
