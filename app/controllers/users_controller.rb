@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
     if @user.avaterImg?
       @userAvater = @user.avaterImg.to_s
     else
@@ -14,7 +14,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
+    if @user.avaterImg?
+      @userAvater = @user.avaterImg.to_s
+    else
+      @userAvater = null
+    end
   end
 
   def update
@@ -27,7 +32,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:avaterImg, :name, :nickname, :age_id, :gender_id)
+    params.require(:user).permit(:avaterImg, :name, :nickname, :age_id, :gender_id, :introduction)
   end
 
 end
