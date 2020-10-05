@@ -5,26 +5,36 @@
       <h2>マイページ <%= resource_name.to_s.humanize %></h2>
       <%= form_with model:@user, local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
+        <% if @userAvater %>
+        <%= image_tag @userAvater, class: "currentUserIcon" %>
+        <% else %>
+        <%= image_tag 'userIcon.png', class: "currentUserIcon"%>
+        <% end %>
         <div class="field">
           <%= f.label :avaterImg, "ユーザーアイコン", class: "Edit__title" %>
           <%= f.file_field :avaterImg, autofocus: true %>
         </div>
         <div class="field">
           <%= f.label :name, "ユーザー名", class: "Edit__title" %>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, placeholder: "例) hoge太郎" %>
         </div>
         <div class="field">
           <%= f.label :nickname, "ニックネーム", class: "Edit__title" %>
-          <%= f.text_field :nickname %>
+          <%= f.text_field :nickname, placeholder: "例) fuga太郎" %>
         </div>
-        <div class="field">
+        <div class="field Edit__selectBox">
           <%= f.label :age, "年齢層", class: "Edit__title" %>
-          <%= f.collection_select :age_id, Age.all, :id, :age, class: 'Edit__selectBox' %>
+          <%= f.collection_select :age_id, Age.all, :id, :age %>
         </div>
-        <div class="field">
+        <div class="field Edit__selectBox">
           <%= f.label :gender, "性別", class: "Edit__title" %>
-          <%= f.collection_select :gender_id, Gender.all, :id, :gender, class: 'Edit__selectBox' %>
+          <%= f.collection_select :gender_id, Gender.all, :id, :gender %>
         </div>
+        <div class="field Edit__introduction">
+          <%= f.label :introduction, "自己紹介文", class: "Edit__title" %>
+          <%= f.text_area :introduction, placeholder: "例) はじめまして！fuga太郎と申します！ ※150文字まで", maxlength: 150 %>
+        </div>
+        
         
         <div class="actions">
           <%= f.submit "更新する", method: :patch %>
