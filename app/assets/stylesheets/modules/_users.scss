@@ -80,9 +80,11 @@
     padding-left: 0;
   }
   .introduce {
-    width: 80%;
+    width: 75%;
+    height: 120px;
     margin: 0 auto;
     padding: 10px 15px;
+    overflow: scroll;
     p {
       margin-bottom: 0;
     }
@@ -208,10 +210,13 @@
 .Edit {
   padding: 100px 0;
   background-color: #f8f8f8;
+  .currentUserIcon {
+    width: 150px;
+    height: 150px;
+  }
   &__title {
     padding-right: 50px;
     margin-right: 20px;
-
   }
   &__contents {
     margin: 30px auto;
@@ -221,7 +226,7 @@
     .field {
       display: grid;
       // justify-content: space-around;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 3fr;
     }
     label {
       font-size: 22px;
@@ -252,5 +257,11 @@
     border: 1px solid gray;
     border-radius: 5px;
     text-decoration: none;
+  }
+  &__introduction {
+    height: 200px;
+  .textarea {
+    width: 120%;
+  }
   }
 }
