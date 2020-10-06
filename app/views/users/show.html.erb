@@ -1,6 +1,28 @@
+<div class="MyPage">
+  <div class="container">
+    <div class="ProfileBox">
+      <h2><%= current_user.name %>さんのページ</h2>
+      <% if @userAvater %>
+      <%= image_tag @userAvater, class: "currentUserIcon" %>
+      <% else %>
+      <%= image_tag 'userIcon.png', class: "currentUserIcon"%>
+      <% end %>
+      <h2 class="UserName"><%= current_user.nickname %></h2>
+      <ul class="ageOrGender">
+        <li class="age"><%= @user.age.age %></li><span>　|　</span>
+        <li class="gender"><%= @user.gender.gender %></li>
+      </ul>
+      <div class="introduce arrowBoxTop">
+        <p><%= @user.introduction %></p>
+      </div>
+      <%= link_to " プロフィールを編集する", edit_user_registration_path(current_user.id), class: "profile_edit fa fa-edit" %>
+    </div>
+  </div>
+</div>
+
 <div class="item-list">
   <div class="container">
-    <h2 class="review">新着の口コミ一覧</h2>
+    <h2 class="review">投稿したクチコミ</h2>
       <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
         <div class="review__box uk-card uk-card-default uk-card-body">
           <div class="review__left">

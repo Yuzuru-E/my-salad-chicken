@@ -14,10 +14,15 @@
 .about {
   padding-top: 70px;
   text-align: center;
-  background-image: image-url('top.jpeg');
+  background-image: image-url('top.jpg');
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: 700px;
+  &__top {
+    color: white;
+    padding-top: 270px;
+    font-size: 55px;
+  }
   h1 {
     margin-top: 180px;
   }
@@ -27,7 +32,6 @@
     padding: 10px 20px;
     color: white;
     text-decoration: none;
-    margin-top: 30px;
   }
 }
 
@@ -83,8 +87,6 @@
     text-decoration: none;
     width: 60%;
     margin-top: 10px;
-    a {
-    }
   }
   .review {
     margin-bottom: 15px;
@@ -109,10 +111,41 @@
       }
     }
     &__center {
-      // margin: 0 25px;
+      margin: 5px 10px;
+      .arrow_box {
+        position: relative;
+        background: #ffffff;
+        border: 5px solid #e8a54d;
+        border-radius: 5px;
+      }
+      .arrow_box:after, .arrow_box:before {
+        right: 100%;
+        top: 30%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      
+      .arrow_box:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-right-color: #ffffff;
+        border-width: 10px;
+        margin-top: -10px;
+      }
+      .arrow_box:before {
+        border-color: rgba(232, 165, 77, 0);
+        border-right-color: #e8a54d;
+        border-width: 17px;
+        margin-top: -17px;
+      }
     }
     &__contents {
-      text-align-last: left;
+      text-align: left;
+      padding: 5px;
+      margin: 5px 10px;
     }
     &__right {
       a {
@@ -126,6 +159,10 @@
         margin: 3px;
       }
     }
+  &__link {
+    padding-left: 0;
+  }
+
   }
 }
 

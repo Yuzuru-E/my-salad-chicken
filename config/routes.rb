@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   root 'items#index'
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    registrations: 'users/registrations'
   }
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
-  resources :users, only: [:sign, :destroy, :new] do
-    collection do
+  resources :users do
+    member do
       get 'logout'
     end
   end
