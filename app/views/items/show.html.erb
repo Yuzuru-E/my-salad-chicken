@@ -1,7 +1,20 @@
 <div class="ItemShow">
   <div class="container">
+    <h2>サラダチキン詳細情報</h2>
     <div class="ItemShow__contents">
-    
+      <div class="ItemShow__left">
+        <%= image_tag "ピザ.jpg" %>
+      </div>
+
+      <div class="ItemShow__right">
+        <ul class="ItemShow__profiles">
+          <li class="ItemShow__name">商品名<%= @item.name %></li>
+          <li class="ItemShow__unitPrice">単価(税抜)<%= @item.price %></li>
+          <li class="ItemShow__maker">メーカー：<%= @item.maker %></li>
+        </ul>
+
+      </div>
+
     </div>
   </div>
 </div>
