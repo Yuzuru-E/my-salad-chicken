@@ -165,8 +165,27 @@
   }
 }
 
-.ItemShow {
+.itemShow {
   padding: 100px 0;
   @include commonBackgroundColor();
-  
+  &__contents {
+  display: flex;
+  justify-content: center;
+  }
+  &__left {   
+    img {
+      height: 300px;
+      width: 200px;
+    }
+  }
+  &__right {
+  text-align: left;
+  margin: auto 0;
+  }
+  &__details {
+    font-size: 25px;
+    padding:10px 0;
+    border-bottom: 1px solid #000;
+  }
+
 }
