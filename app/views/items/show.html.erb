@@ -7,15 +7,49 @@
       </div>
       <div class="itemShow__right">
         <ul class="itemShow__profiles">
-          <li class="itemShow__details itemShow__name">　商品名：　<%= @item.name %></li>
-          <li class="itemShow__details itemShow__unitPrice">　　単価：　<%= @item.price %>円(税抜)</li>
-          <li class="itemShow__details itemShow__maker">メーカー：　<%= link_to @item.maker, @item.maker_url %></li>
+          <li class="itemShow__details itemShow__name">　商品名：　　<%= @item.name %></li>
+          <li class="itemShow__details itemShow__unitPrice">　　単価：　　<%= @item.price %>円(税抜)</li>
+          <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker, @item.maker_url %></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="reviews">
-    
+  <div class="item-list">
+    <div class="container">
+      <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
+        <div class="review__box uk-card uk-card-default uk-card-body">
+          <div class="review__left">
+            <%= link_to "#" do %>
+              <div class="user　uk-card uk-width-auto@m">
+                <p>ユーザー</p>
+                <%= image_tag("ピザ.jpg") %>
+                <p class="user__name">test</p>
+              </div>
+            <% end %>
+          </div>  
+            <div class="review__center user__comment uk-card uk-width-expand@m">
+              <ul class="review__contents arrow_box">
+                <li class="review__timestamp">2020/09/09/10:00</li>
+                <li class="review__evaluation">評価：3<span>｜</span>★★★☆☆</li>
+                <li class="review__title">投稿タイトル</li>
+                <li>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</li>
+              </ul>
+            </div>
+          <div class="review__right">
+            <%= link_to "#" do%>
+              <div class="review__item">
+                <ul class="review__link">
+                  <li><%= image_tag("ピザ.jpg") %></li>
+                  <li class="item-name">サラダチキンA</li>
+                  <li class="maker">アマタケ</li>
+                </ul>
+              </div>
+          <% end %>
+          </div>  
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
 </div>
