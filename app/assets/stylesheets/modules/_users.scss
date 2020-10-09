@@ -8,7 +8,7 @@
 
 .signUp {
   padding: 100px 0;
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   &__title {
     margin-bottom: 0;
     padding: 3px auto;
@@ -38,7 +38,7 @@
 
 .login {
   padding: 100px 0;
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   &__title {
     margin-bottom: 0;
     padding: 3px auto;
@@ -67,7 +67,7 @@
 }
 
 .MyPage {
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   padding-top: 120px;
   .currentUserIcon {
     width: 150px;
@@ -209,7 +209,7 @@
 
 .Edit {
   padding: 100px 0;
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   .currentUserIcon {
     width: 150px;
     height: 150px;

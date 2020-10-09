@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-
 .about {
   padding-top: 70px;
   text-align: center;
@@ -37,7 +36,7 @@
 
 .introduce {
   padding: 20px 0;
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   .introduction__contents {
     margin: 0 auto;
   }
@@ -51,7 +50,7 @@
 
 .item-list {
   padding: 100px 0 ;
-  background-color: #f8f8f8;
+  @include commonBackgroundColor();
   &__index {
     justify-content: center;
     a {
@@ -166,3 +165,31 @@
   }
 }
 
+.itemShow {
+  padding: 100px 0;
+  @include commonBackgroundColor();
+  &__contents {
+  display: flex;
+  justify-content: center;
+  }
+  &__left {   
+    img {
+      height: 300px;
+      width: 200px;
+    }
+  }
+  &__right {
+  text-align: left;
+  margin: auto 0;
+  }
+  &__details {
+    font-size: 25px;
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #000;
+  }
+  &__maker {
+    a {
+      text-decoration: none;
+    }
+  }
+}
