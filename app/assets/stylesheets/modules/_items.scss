@@ -184,8 +184,12 @@
   }
   &__details {
     font-size: 25px;
-    padding:10px 0;
+    padding: 10px 0 10px;
     border-bottom: 1px solid #000;
   }
-
+  &__maker {
+    a {
+      text-decoration: none;
+    }
+  }
 }
