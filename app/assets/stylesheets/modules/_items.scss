@@ -193,6 +193,30 @@
     }
   }
   .reviewForm {
-    margin-top: 10px;
+    &__title {
+      margin-top: 50px;
+    }
+    .field {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      margin: 15px 0;
+      textarea {
+        line-height: 40px;
+      }
+    }
+    &__content {
+      font-size: 20px;
+    }
+    .actions {
+      margin: 20px;
+      input {
+        background-color: rgb(255, 177, 66);
+        padding: 10px 20px;
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        line-height: 10px;
+        cursor: pointer;
+      }
+    }
   }
 }
