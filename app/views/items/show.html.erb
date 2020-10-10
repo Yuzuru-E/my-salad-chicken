@@ -50,5 +50,32 @@
         </div>
       </div>
     </div>
+
+    <div class="reviewForm">
+      <div class="container">
+        <h2 class="reviewForm__title">口コミを投稿する</h2>
+        <%= form_with model: @reveiw, local: true do |f| %>
+          <div class="field">
+            <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
+            <%= f.text_field :reviewTitle, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :evaluation, "評価", class: "reviewForm__content" %>
+            <%= f.text_field :evaluation %>
+          </div>
+          <div class="field">
+            <%= f.label :content, "口コミ内容", class: "reviewForm__content " %>
+            <%= f.text_area :content, placeholder: "※200文字まで",maxlength: 200 %>
+          </div>
+          <div class="field">
+            <%= f.label :reveiwImg, "口コミ画像", class: "reviewForm__content" %>
+            <%= f.file_field :reviewImg %>
+          </div>
+          <div class="actions">
+            <%= f.submit "投稿する", method: :patch %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
