@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   
   resources :items do
+    resources :reviews, only: [:create, :destroy, :edit, :index]
     collection do
       get 'item_list'
       get 'brand_index'
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   
   end
   resources :favorites, only: :index
-  resources :reviews
+  resources :reviews, only: :index
 
 
 end
