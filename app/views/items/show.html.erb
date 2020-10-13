@@ -14,50 +14,52 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="item-list">
-    <div class="container">
-      <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
-        <div class="review__box uk-card uk-card-default uk-card-body">
-          <div class="review__left">
-            <%= link_to "#" do %>
-              <div class="user　uk-card uk-width-auto@m">
-                <p><%= @user.nickname %></p>
-                <%= image_tag("ピザ.jpg") %>
-              </div>
-            <% end %>
-          </div>  
-            <div class="review__center user__comment uk-card uk-width-expand@m">
-              <ul class="review__contents arrow_box">
-                <li class="review__timestamp"><%= @review.created_at.strftime('%Y/%m/%d/ %H:%M') %></li>
-                <li class="review__evaluation">評価：<%= @review.evaluation %><span>｜</span>★★★☆☆</li>
-                <li class="review__title">投稿タイトル | <%= @review.reviewTitle %></li>
-                <li><%= @review.comment %></li>
-                <li class="review__image"><%= image_tag("ピザ.jpg") %></li>
+<div class="item-list">
+  <div class="container">
+    <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
+      <div class="review__box uk-card uk-card-default uk-card-body">
+        <div class="review__left">
+          <%= link_to "#" do %>
+            <div class="user　uk-card uk-width-auto@m">
+              <p><%= @user.nickname %></p>
+              <%= image_tag("ピザ.jpg") %>
+            </div>
+          <% end %>
+        </div>  
+          <div class="review__center user__comment uk-card uk-width-expand@m">
+            <ul class="review__contents arrow_box">
+              <li class="review__timestamp"><%= @review.created_at.strftime('%Y/%m/%d/ %H:%M') %></li>
+              <li class="review__evaluation">評価：<%= @review.evaluation %><span>｜</span>★★★☆☆</li>
+              <li class="review__title">投稿タイトル | <%= @review.reviewTitle %></li>
+              <li><%= @review.comment %></li>
+              <li class="review__image"><%= image_tag("ピザ.jpg") %></li>
+            </ul>
+
+          </div>
+        <div class="review__right">
+          <%= link_to "#" do%>
+            <div class="review__item">
+              <ul class="review__link">
+                <li><%= image_tag("ピザ.jpg") %></li>
+                <li class="item-name">サラダチキンA</li>
+                <li class="maker">アマタケ</li>
               </ul>
-
             </div>
-          <div class="review__right">
-            <%= link_to "#" do%>
-              <div class="review__item">
-                <ul class="review__link">
-                  <li><%= image_tag("ピザ.jpg") %></li>
-                  <li class="item-name">サラダチキンA</li>
-                  <li class="maker">アマタケ</li>
-                </ul>
-              </div>
-            <% end %>
-            <div class="review__edit">
-              <%= link_to "投稿を編集", "#", class: "" %>
-              <%= link_to "投稿を削除", "#", class: "" %>
-            </div>
-          </div>  
-        </div>
+          <% end %>
+          <div class="review__edit">
+            <%= link_to "投稿を編集", edit_item_review_path(1), class: "" %>
+            <%= link_to "投稿を削除", "#", class: "" %>
+          </div>
+        </div>  
       </div>
     </div>
+  </div>
 
-    <div class="reviewForm">
-      <div class="container">
+  <div class="reviewForm">
+    <div class="container">
+      <% if current_user %>
         <h2 class="reviewForm__title">口コミを投稿する</h2>
         <%= form_with model: @reveiw, local: true do |f| %>
           <div class="field">
@@ -69,18 +71,20 @@
             <%= f.text_field :evaluation %>
           </div>
           <div class="field">
-            <%= f.label :content, "口コミ内容", class: "reviewForm__content " %>
-            <%= f.text_area :content, placeholder: "※200文字まで",maxlength: 200 %>
+            <%= f.label :comment, "口コミ内容", class: "reviewForm__content " %>
+            <%= f.text_area :comment, placeholder: "※200文字まで",maxlength: 200 %>
           </div>
           <div class="field">
-            <%= f.label :reveiwImg, "口コミ画像", class: "reviewForm__content" %>
-            <%= f.file_field :reviewImg %>
+            <%= f.label :commentImg, "口コミ画像", class: "reviewForm__content" %>
+            <%= f.file_field :commentImg %>
           </div>
           <div class="actions">
             <%= f.submit "投稿する", method: :patch %>
           </div>
         <% end %>
-      </div>
+      <% else %>
+          <strong><p>※※※ 口コミを投稿するには新規登録/ログインが必要です ※※※</p></strong>
+      <% end %>
     </div>
   </div>
 </div>
