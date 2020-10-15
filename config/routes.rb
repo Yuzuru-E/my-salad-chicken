@@ -15,15 +15,15 @@ Rails.application.routes.draw do
   end
   
   resources :items do
-    resources :reviews, only: [:create, :destroy, :edit, :index]
     collection do
       get 'item_list'
       get 'brand_index'
     end
+    resources :reviews, only: [:create, :show]
   
   end
   resources :favorites, only: :index
-  resources :reviews, only: :index
+  resources :reviews, only: [:index, :create]
 
 
 end
