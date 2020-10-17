@@ -7,7 +7,9 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :age
   belongs_to_active_hash :gender
+  has_many :item, through: :reviews 
   has_many :reviews, dependent: :destroy
+
 
   # validates :comment, presence: true, length: { maximum: 200 }
   
