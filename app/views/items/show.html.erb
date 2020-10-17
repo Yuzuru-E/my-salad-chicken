@@ -18,53 +18,70 @@
 
 <div class="item-list">
   <div class="container">
-    <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
-      <div class="review__box uk-card uk-card-default uk-card-body">
-        <div class="review__left">
-          <%= link_to "#" do %>
-            <div class="user　uk-card uk-width-auto@m">
-              <p><%= @user.nickname %></p>
-              <%= image_tag("ピザ.jpg") %>
-            </div>
-          <% end %>
-        </div>  
-          <div class="review__center user__comment uk-card uk-width-expand@m">
-            <ul class="review__contents arrow_box">
-              <li class="review__timestamp"><%= @review.created_at.strftime('%Y/%m/%d/ %H:%M') %></li>
-              <li class="review__evaluation">評価：<%= @review.evaluation %><span>｜</span>★★★☆☆</li>
-              <li class="review__title">投稿タイトル | <%= @review.reviewTitle %></li>
-              <li><%= @review.comment %></li>
-              <li class="review__image"><%= image_tag("ピザ.jpg") %></li>
-            </ul>
+    <% if @reviews.present? %>
+    <h2 class="title">〜口コミ一覧〜</h2>
+      <% @reviews.each do |review| %>
+        <div class="review__index uk-child-width-expand@s uk-text-center uk-grid">
+          <div class="review__box uk-card uk-card-default uk-card-body">
+            <div class="review__left">
+              <%= link_to user_path(review.user_id) do %>
+                <div class="user uk-card uk-width-auto@m">
+                  <p><%= review.user.nickname %></p>
+                  <%= image_tag review.user.avaterImg.url %>
+                  <div class="profile">
+                    <ul class="age">
+                      <li>年齢層</li>
+                      <li><%= review.user.age.age %></li>
+                    </ul>
+                    <ul class="gender">
+                      <li>性別</li>
+                      <li><%= review.user.gender.gender %></li>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </div>  
+              <div class="review__center user__comment uk-card uk-width-expand@m">
+                <ul class="review__contents arrow_box">
+                  <li class="review__timestamp"><%= review.updated_at.strftime('%Y/%m/%d/ %H:%M') %></li>
+                  <li class="review__evaluation">評価：<%= review.evaluation %><span>｜</span>★★★☆☆</li>
+                  <li class="review__title">投稿タイトル | <%= review.reviewTitle %></li>
+                  <li><%= review.comment %></li>
+                  <li class="review__image"><%= image_tag review.commentImg.url if review.commentImg.url.present? %></li>
+                </ul>
 
+              </div>
+            <div class="review__right">
+              <%= link_to "#" do%>
+                <div class="review__item">
+                  <ul class="review__link">
+                    <li><%= image_tag("ピザ.jpg") %></li>
+                    <li class="item-name">サラダチキンA</li>
+                    <li class="maker">アマタケ</li>
+                  </ul>
+                </div>
+              <% end %>
+              <% if user_signed_in? && current_user.id == review.user.id %>
+                <div class="review__edit">
+                  <%= link_to "投稿を編集", "#", class: "edit" %>
+                  <%= link_to "投稿を削除", "#", class: "delete" %>
+                </div>
+              <% end %>
+            </div>  
           </div>
-        <div class="review__right">
-          <%= link_to "#" do%>
-            <div class="review__item">
-              <ul class="review__link">
-                <li><%= image_tag("ピザ.jpg") %></li>
-                <li class="item-name">サラダチキンA</li>
-                <li class="maker">アマタケ</li>
-              </ul>
-            </div>
-          <% end %>
-          <div class="review__edit">
-            <%= link_to "投稿を編集", edit_item_review_path(1), class: "" %>
-            <%= link_to "投稿を削除", "#", class: "" %>
-          </div>
-        </div>  
-      </div>
-    </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="reviewForm">
     <div class="container">
       <% if current_user %>
         <h2 class="reviewForm__title">口コミを投稿する</h2>
-        <%= form_with model: @reveiw, local: true do |f| %>
+        <%= form_with(model: [@item, @review], local: true) do |f| %>
           <div class="field">
             <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
-            <%= f.text_field :reviewTitle, autofocus: true %>
+            <%= f.text_field :reviewTitle %>
           </div>
           <div class="field">
             <%= f.label :evaluation, "評価", class: "reviewForm__content" %>
