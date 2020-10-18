@@ -19,11 +19,11 @@ Rails.application.routes.draw do
       get 'item_list'
       get 'brand_index'
     end
-    resources :reviews, only: [:create, :show]
+    resources :reviews
   
   end
   resources :favorites, only: :index
-  resources :reviews, only: [:index, :create]
+  resources :reviews
 
 
 end
