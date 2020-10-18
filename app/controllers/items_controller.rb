@@ -1,11 +1,14 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :show]
+  
   def index
     @item = Item.find(1)
   end
 
   def show
-    @user = User.find(current_user.id)
+    if user_signed_in? 
+      @user = User.find(current_user.id)
+    end
     @review = Review.new
     @reviews = @item.reviews.includes(:user)
   end
