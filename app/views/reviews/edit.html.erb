@@ -1,7 +1,7 @@
 <div class="reviewForm">
   <div class="container">
     <h2 class="reviewForm__title">口コミ編集</h2>
-    <%= form_with(model: [@item, @review] local: true) do |f| %>
+    <%= form_with(model: [@item, @review], local: true) do |f| %>
       <div class="field">
         <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
         <%= f.text_field :reviewTitle, autofocus: true %>
@@ -11,12 +11,12 @@
         <%= f.text_field :evaluation %>
       </div>
       <div class="field">
-        <%= f.label :content, "口コミ内容", class: "reviewForm__content " %>
-        <%= f.text_area :content, placeholder: "※200文字まで",maxlength: 200 %>
+        <%= f.label :comment, "口コミ内容", class: "reviewForm__content " %>
+        <%= f.text_area :comment, placeholder: "※200文字まで",maxlength: 200 %>
       </div>
       <div class="field">
-        <%= f.label :reveiwImg, "口コミ画像", class: "reviewForm__content" %>
-        <%= f.file_field :reviewImg %>
+        <%= f.label :commentImg, "口コミ画像", class: "reviewForm__content" %>
+        <%= f.file_field :commentImg %>
       </div>
       <div class="actions">
         <%= f.submit "投稿する", method: :patch %>
