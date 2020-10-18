@@ -1,7 +1,7 @@
 <div class="reviewForm">
   <div class="container">
     <h2 class="reviewForm__title">口コミ編集</h2>
-    <%= form_with model: @reveiw, local: true do |f| %>
+    <%= form_with(model: [@item, @review] local: true) do |f| %>
       <div class="field">
         <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
         <%= f.text_field :reviewTitle, autofocus: true %>
