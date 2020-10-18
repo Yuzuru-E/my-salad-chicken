@@ -175,6 +175,16 @@
     &__edit {
       display: flex;
       flex-direction: column;
+      .btn {
+        display: inline-block;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        border: 1px solid #e8a54d;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background-color: rgb(219, 157, 157);
+      }
     }
   &__link {
     padding-left: 0;
