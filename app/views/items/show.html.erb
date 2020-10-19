@@ -63,8 +63,8 @@
               <% end %>
               <% if user_signed_in? && current_user.id == review.user.id %>
                 <div class="review__edit">
-                  <%= link_to "投稿を編集", "#", class: "edit" %>
-                  <%= link_to "投稿を削除", "#", class: "delete" %>
+                  <%= link_to "投稿を編集", edit_item_review_path(review.item_id, review.id), class: " btn" %>
+                  <%= link_to "投稿を削除", review_path(review.id), class: "btn", method: :delete, data: { confirm: "【確認】投稿した口コミを削除してもよろしいでしょうか？" } %>
                 </div>
               <% end %>
             </div>  
