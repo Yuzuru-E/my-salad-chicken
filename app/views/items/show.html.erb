@@ -45,7 +45,7 @@
                 <ul class="review__contents arrow_box">
                   <li class="review__timestamp"><%= review.updated_at.strftime('%Y/%m/%d/ %H:%M') %></li>
                   <li class="review__evaluation">評価：<%= review.evaluation %><span>｜</span>★★★☆☆</li>
-                  <li class="review__title">投稿タイトル | <%= review.reviewTitle %></li>
+                  <li class="review__title">投稿タイトル | <%= review.title %></li>
                   <li><%= review.comment %></li>
                   <li class="review__image"><%= image_tag review.commentImg.url if review.commentImg.url.present? %></li>
                 </ul>
@@ -80,8 +80,8 @@
         <h2 class="reviewForm__title">口コミを投稿する</h2>
         <%= form_with(model: [@item, @review], local: true) do |f| %>
           <div class="field">
-            <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
-            <%= f.text_field :reviewTitle %>
+            <%= f.label :title, "投稿タイトル", class: "reviewForm__content" %>
+            <%= f.text_field :title %>
           </div>
           <div class="field">
             <%= f.label :evaluation, "評価", class: "reviewForm__content" %>
