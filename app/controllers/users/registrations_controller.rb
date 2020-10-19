@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.avaterImg?
       @userAvater = @user.avaterImg.to_s
     else
-      @userAvater = null
+      @userAvater = nil
     end
   end
 
