@@ -3,9 +3,10 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.references :user, null: false, foreign_key: true
       t.references :item, null: false, foreign_key: true
-      t.text :comment, null: false
-      t.text :commnetImg
-      t.integer :evaluation
+      t.string :title, null: false
+      t.integer :evaluation, null: false
+      t.text :comment
+      t.text :commentImg
       t.timestamps
     end
   end

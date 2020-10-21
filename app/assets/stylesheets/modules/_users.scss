@@ -118,7 +118,7 @@
     border-width: 17px;
     margin-left: -17px;
   }
-  .profile_edit {
+  .btn {
     display: inline-block;
     text-decoration: none;
     padding: 10px;
@@ -225,7 +225,6 @@
     border-radius: 5px;
     .field {
       display: grid;
-      // justify-content: space-around;
       grid-template-columns: 2fr 3fr;
     }
     label {

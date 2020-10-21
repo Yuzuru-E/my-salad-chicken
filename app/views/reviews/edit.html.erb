@@ -3,8 +3,8 @@
     <h2 class="reviewForm__title">口コミ編集</h2>
     <%= form_with(model: [@item, @review], local: true) do |f| %>
       <div class="field">
-        <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
-        <%= f.text_field :reviewTitle, autofocus: true %>
+        <%= f.label :title, "投稿タイトル", class: "reviewForm__content" %>
+        <%= f.text_field :title, autofocus: true %>
       </div>
       <div class="field">
         <%= f.label :evaluation, "評価", class: "reviewForm__content" %>

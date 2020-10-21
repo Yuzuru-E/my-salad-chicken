@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.avaterImg?
       @userAvater = @user.avaterImg.to_s
     else
-      @userAvater = null
+      @userAvater = nil
     end
   end
 

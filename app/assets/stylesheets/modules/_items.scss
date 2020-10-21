@@ -252,3 +252,54 @@
     }
   }
 }
+
+.newItem {
+  padding: 100px 0 50px 0;
+  @include commonBackgroundColor();
+  &__title {
+    padding-right: 50px;
+    margin-right: 20px;
+  }
+  &__contents {
+    margin: 30px auto;
+    width: 50%;
+    border: 1px solid rgba(247, 241, 227, 0.229);
+    border-radius: 5px;
+    .field {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      margin: 5px 0px;
+    }
+    label {
+      font-size: 22px;
+      padding: 5px 0;
+      display: inline-block;
+    }
+    input {
+      height: 30px;
+      line-height: 30px;
+      margin:5px 0;
+    }
+    .actions {
+      margin: 20px;
+      input {
+        background-color: rgb(255, 177, 66);
+        padding: 10px 20px;
+        border: 1px solid #bdc3c7;
+        border-radius: 5px;
+        line-height: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  &__selectBox {
+    margin-bottom: 10px;
+  }
+  .back {
+    padding: 10px 20px;
+    background-color: #bdc3c7;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+}

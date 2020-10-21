@@ -9,7 +9,7 @@
         <ul class="itemShow__profiles">
           <li class="itemShow__details itemShow__name">　商品名：　　<%= @item.name %>　</li>
           <li class="itemShow__details itemShow__unitPrice">　　単価：　　<%= @item.price %>円(税抜)</li>
-          <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker, @item.maker_url, target: "_blank", rel: 'noopener' %></li>
+          <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker.maker, @item.maker_url, target: "_blank", rel: 'noopener' %></li>
         </ul>
       </div>
     </div>
@@ -27,7 +27,11 @@
               <%= link_to user_path(review.user_id) do %>
                 <div class="user uk-card uk-width-auto@m">
                   <p><%= review.user.nickname %></p>
-                  <%= image_tag review.user.avaterImg.url %>
+                  <% if review.user.avaterImg.url %>
+                    <%= image_tag review.user.avaterImg.url %>
+                  <% else %>
+                    <%= image_tag "userIcon.png" %>
+                  <% end %>
                   <div class="profile">
                     <ul class="age">
                       <li>年齢層</li>
@@ -45,7 +49,7 @@
                 <ul class="review__contents arrow_box">
                   <li class="review__timestamp"><%= review.updated_at.strftime('%Y/%m/%d/ %H:%M') %></li>
                   <li class="review__evaluation">評価：<%= review.evaluation %><span>｜</span>★★★☆☆</li>
-                  <li class="review__title">投稿タイトル | <%= review.reviewTitle %></li>
+                  <li class="review__title">投稿タイトル | <%= review.title %></li>
                   <li><%= review.comment %></li>
                   <li class="review__image"><%= image_tag review.commentImg.url if review.commentImg.url.present? %></li>
                 </ul>
@@ -80,8 +84,8 @@
         <h2 class="reviewForm__title">口コミを投稿する</h2>
         <%= form_with(model: [@item, @review], local: true) do |f| %>
           <div class="field">
-            <%= f.label :reviewTitle, "投稿タイトル", class: "reviewForm__content" %>
-            <%= f.text_field :reviewTitle %>
+            <%= f.label :title, "投稿タイトル", class: "reviewForm__content" %>
+            <%= f.text_field :title %>
           </div>
           <div class="field">
             <%= f.label :evaluation, "評価", class: "reviewForm__content" %>

@@ -15,7 +15,10 @@
       <div class="introduce arrowBoxTop">
         <p><%= @user.introduction %></p>
       </div>
-      <%= link_to " プロフィールを編集する", edit_user_registration_path(current_user.id), class: "profile_edit fa fa-edit" %>
+      <%= link_to " プロフィールを編集する", edit_user_registration_path(current_user.id), class: "btn fa fa-edit" %>
+      <% if current_user.admin? %>
+        <%= link_to "商品登録を行う", new_item_path, class: "btn" %>
+      <% end %>
     </div>
   </div>
 </div>
