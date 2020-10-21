@@ -9,7 +9,7 @@
         <ul class="itemShow__profiles">
           <li class="itemShow__details itemShow__name">　商品名：　　<%= @item.name %>　</li>
           <li class="itemShow__details itemShow__unitPrice">　　単価：　　<%= @item.price %>円(税抜)</li>
-          <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker, @item.maker_url, target: "_blank", rel: 'noopener' %></li>
+          <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker.maker, @item.maker_url, target: "_blank", rel: 'noopener' %></li>
         </ul>
       </div>
     </div>
@@ -27,7 +27,11 @@
               <%= link_to user_path(review.user_id) do %>
                 <div class="user uk-card uk-width-auto@m">
                   <p><%= review.user.nickname %></p>
-                  <%= image_tag review.user.avaterImg.url %>
+                  <% if review.user.avaterImg.url %>
+                    <%= image_tag review.user.avaterImg.url %>
+                  <% else %>
+                    <%= image_tag "userIcon.png" %>
+                  <% end %>
                   <div class="profile">
                     <ul class="age">
                       <li>年齢層</li>
