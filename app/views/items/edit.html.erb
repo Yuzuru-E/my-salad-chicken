@@ -1,0 +1,38 @@
+<% if current_user.admin? %>
+<div class="newItem">
+  <div class="container">
+    <h2 class="newItem__title">アイテム情報の編集</h2>
+    <div class="newItem__contents">
+      <%= form_with(model: @item, local: true, id: 'new_item') do |f| %>
+        <div class="field">
+          <%= f.label :name, "商品名", class: "newItem__content" %>
+          <%= f.text_field :name, placeholder: "サラダチキン", autofocus: true %>
+        </div>
+        <div class="field">
+          <%= f.label :maker_id, "メーカー名", class: "newItem__content" %>
+          <%= f.collection_select :maker_id, Maker.all, :id, :maker %>
+        </div>
+        <div class="field">
+          <%= f.label :maker_url, "メーカーURL", class: "newItem__content" %>
+          <%= f.text_field :maker_url, placeholder: "※http:// sample.com" %>
+        </div>
+        <div class="field">
+          <%= f.label :price, "価格", class: "newItem__content" %>
+          <%= f.text_field :price %>
+        </div>
+        <div class="field">
+          <p class="newItem__content">保存中の商品画像</p>
+          <%= image_tag @itemImg %>
+        </div>
+        <div class="field">
+          <%= f.label :image_url, "商品画像", class: "newItem__content" %>
+          <%= f.file_field :image_url %>
+        </div>
+        <div class="actions">
+          <%= f.submit "編集内容を保存する" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
