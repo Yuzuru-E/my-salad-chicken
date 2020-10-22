@@ -9,6 +9,7 @@ class User < ApplicationRecord
   belongs_to_active_hash :gender
   has_many :item, through: :reviews 
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
 
   # validates :comment, presence: true, length: { maximum: 200 }
