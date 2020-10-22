@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :show]
+  before_action :set_item, only: [:edit, :show, :update]
   
   def index
     @item = Item.find(1)
@@ -27,13 +27,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @itemImg = @item.image_url.to_s
+  end
+
+  def update
+    @item.update(item_params)
+    redirect_to item_path(@item.id), notice: '商品情報が更新されました。'
   end
 
   private
 
-  # def review_params
-  #   params.require(:review).permit(:title, :evaluation, :comment, :commentImg).merge(user_id: current_user.id, item_id: params[:item_id])
-  # end
   def item_params
     params.require(:item).permit(:name, :maker_id, :maker_url, :price, :image_url)
   end

@@ -3,7 +3,7 @@
     <h2>サラダチキン詳細情報</h2>
     <div class="itemShow__contents">
       <div class="itemShow__left">
-        <%= image_tag "ピザ.jpg" %>
+        <%= image_tag @item.image_url.to_s %>
       </div>
       <div class="itemShow__right">
         <ul class="itemShow__profiles">
@@ -13,6 +13,9 @@
         </ul>
       </div>
     </div>
+    <% if current_user.admin? %>
+        <%= link_to "商品情報の編集", edit_item_path(@item.id), class: "btn" %>
+    <% end %>
   </div>
 </div>
 
