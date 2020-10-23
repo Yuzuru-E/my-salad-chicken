@@ -1,18 +1,16 @@
 class FavoritesController < ApplicationController
-  before_action :set_post
+  before_action :set_item
   before_action :authenticate_user!
 
   def index
   end
   
   def create
-    if @item.user_id != current_user.id
-      @favorite = Favorite.create(user_id: current_user.id, post_id: @post.id)
-    end
+    @favorite = Favorite.create(user_id: current_user.id, item_id: @item.id)
   end
 
   def destroy
-    @favorite ~ Favorite.find_by(user_id: current_user.id, item_id: @item.id)
+    @favorite = Favorite.find_by(user_id: current_user.id, item_id: @item.id)
     @favorite.destroy
   end
 
