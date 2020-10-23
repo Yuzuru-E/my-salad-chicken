@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
   
   resources :items do
-    resource :favotites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     collection do
       get 'item_list'
       get 'brand_index'
