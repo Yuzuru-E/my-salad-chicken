@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   end
   
   resources :users do
+    get :favorites, on: :collection
     member do
       get 'logout'
     end
   end
   
   resources :items do
+    resource :favorites, only: [:create, :destroy]
     collection do
       get 'item_list'
       get 'brand_index'

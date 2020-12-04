@@ -10,6 +10,13 @@
           <li class="itemShow__details itemShow__name">　商品名：　　<%= @item.name %>　</li>
           <li class="itemShow__details itemShow__unitPrice">　　単価：　　<%= @item.price %>円(税抜)</li>
           <li class="itemShow__details itemShow__maker">メーカー：　　<%= link_to @item.maker.maker, @item.maker_url, target: "_blank", rel: 'noopener' %></li>
+          <% if user_signed_in? %>
+            <% if !Favorite.exists?(user_id: current_user.id, item_id: @item.id) %>
+              <%= link_to "お気に入り登録", item_favorites_path(@item), method: :post, class: "btn"%>
+            <% else %>
+              <%= link_to "お気に入り登録中", item_favorites_path(@item), method: :delete, class: "btn" %>
+            <% end %>
+          <% end %>
         </ul>
       </div>
     </div>
